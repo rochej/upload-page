@@ -52,10 +52,32 @@
 	  template: __webpack_require__(7)
 	});
 
-	var UploadPage = Marionette.CollectionView.extend({
+	var UploadPage = Marionette.CompositeView.extend({
 	  el: '#app-hook',
-	  tagName: 'ul',
-	  childView: File
+	  template: __webpack_require__(8),
+	  childView: File,
+	  childViewContainer: 'ul',
+	  ui:{
+	    filename: "#id_filename",
+	    form: 'form',
+	    status: "#id_status"
+	  },
+	  triggers: {
+	    'submit @ui.form': 'add:file:item'
+	  },
+	  collectionEvents:{
+	    add: 'itemAdded'
+	  },
+	  onAddFileItem: function(){
+	    this.collection.add({
+	      filename: this.ui.filename.val(),
+	      status: this.ui.status.val()
+	    });
+	  },
+	  itemAdded: function(){
+	    this.ui.filename.val('');
+	    this.ui.status.val('');
+	  }
 	});
 
 	var page = new UploadPage({
@@ -17567,6 +17589,19 @@
 	};
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	module.exports = function(obj){
+	var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
+	with(obj||{}){
+	__p+='<ul></ul>\n<form>\n  <label for="id_filename">Filename</label>\n  <input type="text" name="filename" id="id_filename"/>\n  <label for="id_status">Status</label>\n  <input type="text" name="status" id="id_status" />\n  <button id="btn-add">Add</button>\n</form>';
+	}
+	return __p;
+	};
+
 
 /***/ }
 /******/ ]);

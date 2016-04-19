@@ -6,10 +6,32 @@ var File = Marionette.LayoutView.extend({
   template: require('./templates/fileitem.html')
 });
 
-var UploadPage = Marionette.CollectionView.extend({
+var UploadPage = Marionette.CompositeView.extend({
   el: '#app-hook',
-  tagName: 'ul',
-  childView: File
+  template: require('./templates/filelist.html'),
+  childView: File,
+  childViewContainer: 'ul',
+  ui:{
+    filename: "#id_filename",
+    form: 'form',
+    status: "#id_status"
+  },
+  triggers: {
+    'submit @ui.form': 'add:file:item'
+  },
+  collectionEvents:{
+    add: 'itemAdded'
+  },
+  onAddFileItem: function(){
+    this.collection.add({
+      filename: this.ui.filename.val(),
+      status: this.ui.status.val()
+    });
+  },
+  itemAdded: function(){
+    this.ui.filename.val('');
+    this.ui.status.val('');
+  }
 });
 
 var page = new UploadPage({
