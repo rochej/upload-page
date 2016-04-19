@@ -1,3 +1,6 @@
 .row
-  .eleven.columns
-    hello blah blah blah
+  .eleven.columns#hook
+    = javascript_tag do
+      $(function(){
+        UploadDocs.start();
+      });
