@@ -4,6 +4,7 @@ var FileModel = require('../models/file');
 
 var FormView = require('./form');
 var ListView = require('./list');
+var AlertView = require('./alert');
 
 
 
