@@ -17557,15 +17557,17 @@
 
 	var FormView = __webpack_require__(9);
 	var ListView = __webpack_require__(11);
+	var AlertView = __webpack_require__(13);
 
 
 
 
 	var Layout = Marionette.LayoutView.extend({
 	  el: '#app-hook',
-	  template: __webpack_require__(13),
+	  template: __webpack_require__(15),
 
 	  regions: {
+	    alert: '.alert',
 	    form: '.form',
 	    list: '.list'
 	  },
@@ -17575,9 +17577,11 @@
 	  },
 
 	  onShow: function(){
+	    var alertView = new AlertView({model: this.model});
 	    var formView = new FormView({model: this.model});
 	    var listView = new ListView({collection: this.collection});
 
+	    this.showChildView('alert', alertView);
 	    this.showChildView('form', formView);
 	    this.showChildView('list', listView);
 	  },
@@ -17692,6 +17696,7 @@
 
 	var Marionette = __webpack_require__(1)
 
+	// why layout rather than item?  try to switch
 	var File = Marionette.LayoutView.extend({
 	  tagName: 'tr',
 	  template: __webpack_require__(12)
@@ -17726,12 +17731,47 @@
 
 /***/ },
 /* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Marionette = __webpack_require__(1)
+
+	var Alert = Marionette.ItemView.extend({
+	  tagName: 'div',
+	  template: __webpack_require__(14),
+	  initialize: function(){
+	    this.listenTo(this.model, "change", this.sayHello)
+	  },
+	  sayHello: function(){
+	    console.log("hello")
+	  }
+	});
+
+	module.exports = Alert;
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(_) {module.exports = function(obj){
+	var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
+	with(obj||{}){
+	__p+='<p> hello </p><button class=\'button\'>hello</button>\n'+
+	((__t=( filename ))==null?'':_.escape(__t))+
+	'';
+	}
+	return __p;
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 15 */
 /***/ function(module, exports) {
 
 	module.exports = function(obj){
 	var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 	with(obj||{}){
-	__p+='<div class="list"></div>\n<div class="form"></div>';
+	__p+='<div class="alert"></div>\n<div class="list"></div>\n<div class="form"></div>';
 	}
 	return __p;
 	};
