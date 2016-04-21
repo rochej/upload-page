@@ -1,0 +1,9 @@
+<p> stuff</p>
+
+<table>
+  <% for upload in @uploads.models: %>
+    <tr>
+      <td> <%= upload.get("filename") %></td>
+    </tr>
+  <% end %>
+<table>

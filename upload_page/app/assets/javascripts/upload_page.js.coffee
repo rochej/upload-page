@@ -3,7 +3,9 @@ window.UploadPage =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+  initialize: ->
+    new UploadPage.Routers.Uploads();
+    Backbone.history.start();
 
 $(document).ready ->
   UploadPage.initialize()
