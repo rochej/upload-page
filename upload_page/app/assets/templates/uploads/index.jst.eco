@@ -1,9 +1,9 @@
 <p> stuff</p>
 
-<table>
-  <% for upload in @uploads.models: %>
-    <tr>
-      <td> <%= upload.get("filename") %></td>
-    </tr>
-  <% end %>
-<table>
+<form id="new_upload">
+  <input type="text" name="filename" id="new_filename">
+  <input type="submit" value="Add">
+</form>
+
+<table id ="uploads">
+</table>

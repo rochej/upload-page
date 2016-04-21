@@ -1,0 +1,6 @@
+<td><%= @upload.get('filename') %></td>
+<td>
+  <% if @upload.get('status'): %>
+    Upload successful
+  <% end %>
+</td>
