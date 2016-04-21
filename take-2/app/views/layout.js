@@ -24,7 +24,7 @@ var Layout = Marionette.LayoutView.extend({
   },
 
   onShow: function(){
-    var alertView = new AlertView({model: this.model});
+    var alertView = new AlertView({model: this.model, collection: this.collection});
     var formView = new FormView({model: this.model});
     var listView = new ListView({collection: this.collection});
 
@@ -44,6 +44,7 @@ var Layout = Marionette.LayoutView.extend({
   },
 
   itemAdded: function(){
+    // console.log("hello")
     this.model.set({
       filename: '',
       created_at: '',

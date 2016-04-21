@@ -17577,7 +17577,7 @@
 	  },
 
 	  onShow: function(){
-	    var alertView = new AlertView({model: this.model});
+	    var alertView = new AlertView({model: this.model, collection: this.collection});
 	    var formView = new FormView({model: this.model});
 	    var listView = new ListView({collection: this.collection});
 
@@ -17597,6 +17597,7 @@
 	  },
 
 	  itemAdded: function(){
+	    // console.log("hello")
 	    this.model.set({
 	      filename: '',
 	      created_at: '',
@@ -17738,11 +17739,15 @@
 	var Alert = Marionette.ItemView.extend({
 	  tagName: 'div',
 	  template: __webpack_require__(14),
-	  initialize: function(){
-	    this.listenTo(this.model, "change", this.sayHello)
+	  onBeforeRender: function(){
+	    // this.model: this.collection.pop
+	    console.log("before render");
+	  },
+	  modelEvents: {
+	    change: 'render'
 	  },
 	  sayHello: function(){
-	    console.log("hello")
+	    console.log(this.model.attributes)
 	  }
 	});
 
@@ -17755,7 +17760,7 @@
 	/* WEBPACK VAR INJECTION */(function(_) {module.exports = function(obj){
 	var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 	with(obj||{}){
-	__p+='<p> hello </p><button class=\'button\'>hello</button>\n'+
+	__p+='<p> hello </p>\n'+
 	((__t=( filename ))==null?'':_.escape(__t))+
 	'';
 	}
