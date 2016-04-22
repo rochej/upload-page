@@ -14,12 +14,11 @@ class UploadPage.Views.UploadItem extends Marionette.ItemView
       status: status
       created_at: created_at
 
-  collectionEvents:
-    'sync': 'render'
-
   events:
     'click .btn-del': 'deleteUpload'
 
+  modelEvents:
+    'change': 'render'
+
   deleteUpload: ->
-    console.log("delete")
-    console.log(@model.destroy())
+    @model.destroy()
