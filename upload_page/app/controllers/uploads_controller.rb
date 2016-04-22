@@ -1,7 +1,7 @@
 class UploadsController < ApplicationController
 
   def index
-    render json: Upload.all
+    render json: Upload.where(type_id: params[:type_id])
   end
 
   def show
