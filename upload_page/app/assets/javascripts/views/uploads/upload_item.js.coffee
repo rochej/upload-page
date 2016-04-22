@@ -14,6 +14,9 @@ class UploadPage.Views.UploadItem extends Marionette.ItemView
       status: status
       created_at: created_at
 
+  collectionEvents:
+    'sync': 'render'
+
   events:
     'click .btn-del': 'deleteUpload'
 

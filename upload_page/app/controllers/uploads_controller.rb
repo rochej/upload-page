@@ -9,7 +9,9 @@ class UploadsController < ApplicationController
   end
 
   def create
-    render json: Upload.create(upload_params)
+    @type = Type.find(params[:type_id])
+    @upload = Upload.create(filename: "fake.txt", type: @type)
+    render json: @upload
   end
 
   def update

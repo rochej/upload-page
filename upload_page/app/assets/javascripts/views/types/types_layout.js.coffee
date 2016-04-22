@@ -11,3 +11,6 @@ class UploadPage.Views.TypesLayout extends Marionette.LayoutView
     @showChildView('header', typeView)
     @showChildView('body', uploadsView)
     return
+
+  onChildviewAddUploadItem: ->
+    @model.uploads.create()

@@ -1,6 +1,7 @@
 item_template = "<%= name %>
                 <%= description %>
-                <%= quantity %>"
+                <%= quantity %>
+                <button class='btn-add'>Upload</button>"
 
 class UploadPage.Views.TypeItem extends Marionette.ItemView
   tagName: 'tr'
@@ -12,4 +13,7 @@ class UploadPage.Views.TypeItem extends Marionette.ItemView
       name: name
       description: description
       quantity: quantity
+
+  triggers:
+    'click .btn-add': 'add:upload:item'
 
