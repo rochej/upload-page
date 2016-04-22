@@ -13,4 +13,7 @@ type3 = Type.create(name: "Address verification", description: "Utility bill, ba
 
 up1.type = type1
 
-up2.type = type2
+up2.type = type3
+
+up1.save
+up2.save
