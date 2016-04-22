@@ -5,7 +5,6 @@ item_template= "<td><%= filename %></td>
 
 class UploadPage.Views.UploadItem extends Marionette.ItemView
   tagName: 'tr'
-  # template: JST['uploads/upload_item']
   template: (serialized_model) ->
     filename = serialized_model.filename
     status = if serialized_model.status then "Uploaded Successfully" else "Upload Failed"
