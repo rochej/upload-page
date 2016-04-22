@@ -1,5 +1,5 @@
 class UploadPage.Views.PageLayout extends Marionette.LayoutView
-  template: JST['uploads/layout3']
+  template: JST['uploads/page_layout']
   regions:
     alert: '.alert'
     form: '.form'
