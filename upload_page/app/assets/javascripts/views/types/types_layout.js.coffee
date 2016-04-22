@@ -6,7 +6,6 @@ class UploadPage.Views.TypesLayout extends Marionette.LayoutView
 
   onRender: ->
     typeView = new UploadPage.Views.TypeItem({model: @model})
-    debugger
     @model.uploads.fetch({reset: true})
     uploadsView = new UploadPage.Views.UploadList({collection: @model.uploads})
     @showChildView('header', typeView)
