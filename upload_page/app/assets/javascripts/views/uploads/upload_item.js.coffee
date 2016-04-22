@@ -1,8 +1,7 @@
-class UploadPage.Views.UploadItem extends Backbone.View
+# class UploadPage.Views.UploadItem extends Marionette.ItemView
+#   template: JST['uploads/upload_item']
+#   tagName: 'tr'
 
-  template: JST['uploads/upload_item']
-  tagName: 'tr'
-
-  render: ->
-    $(@el).html(@template(upload: @model))
-    this
+#   render: ->
+#     $(@el).html(@template(upload: @model))
+#     this

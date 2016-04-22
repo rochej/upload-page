@@ -1,5 +1,3 @@
-<p> stuff</p>
-
 <form id="new_upload">
   <input type="text" name="filename" id="new_filename">
   <input type="submit" value="Add">
