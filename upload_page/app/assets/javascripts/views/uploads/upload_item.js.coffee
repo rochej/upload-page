@@ -1,6 +1,6 @@
 item_template= "<td><%= filename %></td>
-                <td><%= status %></td>
                 <td><%= created_at %></td>
+                <td><%= status %></td>
                 <td><i class='fa fa-times btn-del'></i></td>"
 
 class UploadPage.Views.UploadItem extends Marionette.ItemView

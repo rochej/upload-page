@@ -31,3 +31,4 @@ ask Nate:
   sup with the templates?
   is view nesting OK or is there a better way?
   event delegation details--best way to pop that alert
+  table header row
