@@ -14,3 +14,4 @@ class UploadPage.Views.TypesLayout extends Marionette.LayoutView
 
   onChildviewAddUploadItem: ->
     @model.uploads.create()
+    UploadPage.vent.trigger 'some:event'

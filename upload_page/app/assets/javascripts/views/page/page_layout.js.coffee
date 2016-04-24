@@ -5,9 +5,10 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     form: '.form'
     list: '.list'
 
-  # initialize: (options)->
-  #   _.bindAll(this, "uploadSaved")
-  #   options.vent.bind("uploadSaved", this.uploadSaved)
+  initialize: ->
+    debugger
+    @listenTo UploadPage.vent, 'some:event', @uploadSaved
+
 
   uploadSaved:->
     console.log("page layout sees add")

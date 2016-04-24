@@ -6,11 +6,11 @@ window.UploadPage =
   initialize: ->
     new UploadPage.Routers.Uploads();
     Backbone.history.start();
+    this.vent = _.extend({}, Backbone.Events)
 
 $(document).ready ->
   UploadPage.initialize()
-  UploadPage.vent = _.extend({}, Backbone.Events)
   UploadPage.vent.on 'some:event', ->
     alert 'some event was fired!'
     return
-  UploadPage.vent.trigger 'some:event'
+  # UploadPage.vent.trigger 'some:event'
