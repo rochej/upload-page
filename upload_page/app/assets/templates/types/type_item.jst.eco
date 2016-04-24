@@ -1,0 +1,8 @@
+<div class = "nine columns">
+  <strong>Type Name</strong>(choose #)
+  <br>
+  Description ...
+</div>
+<div class = "three columns">
+  <button class='btn-add button-primary'>Upload</button>
+</div>

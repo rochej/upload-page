@@ -5,6 +5,7 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     list: '.list'
 
   initialize: ->
+    # @collection.on('sync', this.render, this)
     # @listenTo UploadPage.vent 'add:upload:item' @uploadSaved
     self = this
     UploadPage.vent.on 'add:upload:item', (upload) ->

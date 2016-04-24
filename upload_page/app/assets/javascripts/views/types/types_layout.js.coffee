@@ -3,14 +3,21 @@ class UploadPage.Views.TypesLayout extends Marionette.LayoutView
   regions:
     header: '.section-head'
     body: '.section-body'
+  initialize: ->
+    _.bindAll(this, "renderUploads")
 
   onRender: ->
     typeView = new UploadPage.Views.TypeItem({model: @model})
-    @model.uploads.fetch({reset: true})
-    uploadsView = new UploadPage.Views.UploadList({collection: @model.uploads})
     @showChildView('header', typeView)
-    @showChildView('body', uploadsView)
+    @model.uploads.fetch
+      reset: true
+      success: this.renderUploads
     return
+
+  renderUploads: ->
+    uploadsView = new UploadPage.Views.UploadList({collection: @model.uploads})
+    @showChildView('body', uploadsView)
+
 
   onChildviewAddUploadItem: ->
     @model.uploads.create()
