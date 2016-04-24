@@ -15,7 +15,6 @@ class UploadPage.Views.TypeItem extends Marionette.ItemView
   #     description: description
   #     quantity: quantity
 
-  triggers:
-    'click .btn-add': 'add:upload:item'
-
+  events:
+    'click .btn-add': -> UploadPage.vent.trigger 'add:upload:item', @model
 

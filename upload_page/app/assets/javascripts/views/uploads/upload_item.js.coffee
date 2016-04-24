@@ -5,7 +5,12 @@ item_template= "<td><%= filename %></td>
 
 class UploadPage.Views.UploadItem extends Marionette.ItemView
   tagName: 'tr'
+  # template: JST['uploads/upload_item'](@model)
   # template: JST['uploads/upload_item']
+  # template: "#upload_item"
+
+  # initialize: ->
+  #   debugger
 
   # onBeforeRender: ->
   #   this.model = new UploadPage.Models.Upload({filename: this.options.filename})

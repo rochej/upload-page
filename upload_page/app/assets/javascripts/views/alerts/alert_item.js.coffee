@@ -1,4 +1,4 @@
-item_template = "hi<%= filename %>"
+item_template = "hi"
 
 class UploadPage.Views.AlertItem extends Marionette.ItemView
   tagName: 'p'
@@ -8,3 +8,11 @@ class UploadPage.Views.AlertItem extends Marionette.ItemView
     _.template(item_template)
       filename: filename
       created_at: created_at
+
+  # initialize: ->
+  #   self = this
+  #   UploadPage.vent.on 'save:upload:item' ->
+  #     self.uploadSaved
+
+  # uploadSaved: ->
+  #   console.log('alert sees collection saved')

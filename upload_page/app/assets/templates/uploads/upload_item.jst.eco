@@ -1,2 +1,2 @@
-<td><%= filename %></td>
+<td><%= model.filename %></td>
 <button class='btn-del'>X</button>
