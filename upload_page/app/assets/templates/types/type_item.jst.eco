@@ -1,7 +1,7 @@
 <div class = "nine columns">
-  <strong>Type Name</strong>(choose #)
+  <strong><%= @name %></strong>(choose <%= @quantity %>)
   <br>
-  Description ...
+  <%= @description %>
 </div>
 <div class = "three columns">
   <button class='btn-add button-primary'>Upload</button>

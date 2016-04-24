@@ -1,5 +1,5 @@
 class UploadPage.Views.TypesLayout extends Marionette.LayoutView
-  template: JST['uploads/types_layout']
+  template: JST['types/types_layout']
   regions:
     header: '.section-head'
     body: '.section-body'

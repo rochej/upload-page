@@ -1,4 +1,4 @@
-<td><%= this.filename %></td>
-<td><%= this.created_at %></td>
-<td><%= this.status %></td>
+<td><%= @filename %></td>
+<td><%= @created_at %></td>
+<td><%= @status %></td>
 <td><i class='fa fa-times btn-del'></i></td>
