@@ -1,1 +1,0 @@
-class UploadPage.Views.UploadAlert extends Marionette.ItemView
