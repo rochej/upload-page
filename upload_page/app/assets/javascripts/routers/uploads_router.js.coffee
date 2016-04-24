@@ -8,7 +8,10 @@ class UploadPage.Routers.Uploads extends Marionette.AppRouter
       self.createUpload(type)
 
   createUpload: (type)->
-    type.uploads.create({wait: true})
+    # upload = new UploadPage.Models.Upload
+    type.uploads.create({filename: "joe"}, {wait: true, success: -> console.log("stuff")})
+      # wait: true
+      # success: ->
 
   index: ->
     @types = new UploadPage.Collections.Types()

@@ -19,7 +19,7 @@ class UploadPage.Views.TypesLayout extends Marionette.LayoutView
     @showChildView('body', uploadsView)
 
 
-  onChildviewAddUploadItem: ->
+  # onChildviewAddUploadItem: ->
     # console.log(event)
     # @model.uploads.create
     # upload = @model.uploads.last()

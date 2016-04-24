@@ -1,2 +1,4 @@
-<td><%= model.filename %></td>
-<button class='btn-del'>X</button>
+<td><%= this.filename %></td>
+<td><%= this.created_at %></td>
+<td><%= this.status %></td>
+<td><i class='fa fa-times btn-del'></i></td>
