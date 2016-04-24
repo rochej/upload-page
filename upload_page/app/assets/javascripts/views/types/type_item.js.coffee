@@ -17,3 +17,4 @@ class UploadPage.Views.TypeItem extends Marionette.ItemView
   triggers:
     'click .btn-add': 'add:upload:item'
 
+

@@ -4,6 +4,7 @@ window.UploadPage =
   Views: {}
   Routers: {}
   initialize: ->
+    @vent = _.extend({}, Backbone.Events)
     new UploadPage.Routers.Uploads();
     Backbone.history.start();
 
