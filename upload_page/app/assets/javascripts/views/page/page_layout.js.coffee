@@ -6,8 +6,7 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     list: '.list'
 
   initialize: ->
-    debugger
-    @listenTo UploadPage.vent, 'some:event', @uploadSaved
+    @listenTo UploadPage.vent, 'add:upload:item', @uploadSaved
 
 
   uploadSaved:->
