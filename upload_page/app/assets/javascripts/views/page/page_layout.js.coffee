@@ -5,20 +5,11 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     list: '.list'
 
   initialize: ->
-    UploadPage.vent.on 'sync:upload:item', @testSync
-    # @collection.on('sync', this.render, this)
-    # @listenTo UploadPage.vent, 'add:upload:item', @uploadSaved
     self = this
-    # UploadPage.vent.on 'add:upload:item', (upload) ->
-    #   self.uploadSaved(upload)
-    UploadPage.vent.on 'save:upload:item', (upload) ->
+    UploadPage.vent.on 'upload:saved', (upload) ->
       self.uploadSavedAlert(upload)
 
-  testSync: ->
-    console.log("page sees sync")
-
   uploadSavedAlert: (upload)->
-    # other_upload = @collection.last()
     alertView = new UploadPage.Views.AlertItem(model: upload)
     @showChildView('alert', alertView)
 

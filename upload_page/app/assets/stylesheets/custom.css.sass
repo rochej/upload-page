@@ -1,23 +1,34 @@
 $bg-light: #F4F4F4 //grey
+$bg-alert: #EDF3F9
 $bg-dark: #2B55A2 //dark blue
 $highlight-dark: #469CD5
 $highlight-light: #6CAFDC //bright blue
 $text: #717171 //dark grey
-$outline: #cccccc
+$outline: #cccccc //light grey
+$padding: 2vw 5vw 2vw 5vw
 
 body
   background-color: $bg-light
   color: $text
-
 
 header
   width: 100%
   height: 75px
   background-color: $bg-dark
 
+.alert
+  @extend .wrapper
+  width: 100%
+  padding: $padding
+  color: $highlight-light
+  background-color: $bg-alert
+
+.fa-check-circle
+  color: $highlight-light
+
 .main
   background-color: white
-  padding: 2vw 5vw 2vw 5vw
+  padding: $padding
   margin-top: 2vw
 
 .section-head
