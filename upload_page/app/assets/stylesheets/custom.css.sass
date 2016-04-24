@@ -3,6 +3,7 @@ $bg-dark: #2B55A2 //dark blue
 $highlight-dark: #469CD5
 $highlight-light: #6CAFDC //bright blue
 $text: #717171 //dark grey
+$outline: #cccccc
 
 body
   background-color: $bg-light
@@ -19,12 +20,17 @@ header
   padding: 2vw 5vw 2vw 5vw
   margin-top: 2vw
 
-.header
+.section-head
   background-color: $bg-light
-  padding: 5px
+  padding: 1vw
+
+.section-body
+  padding: 1vw
 
 .wrapper
-  border: 1px solid $text
+  border: 1px solid $outline
+  border-radius: 1px
 
 .type-wrapper
   @extend .wrapper
+  margin: 2vw 0 0 0

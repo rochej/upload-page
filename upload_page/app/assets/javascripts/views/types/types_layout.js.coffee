@@ -1,8 +1,8 @@
 class UploadPage.Views.TypesLayout extends Marionette.LayoutView
   template: JST['uploads/types_layout']
   regions:
-    header: '.header'
-    body: '.body'
+    header: '.section-head'
+    body: '.section-body'
 
   onRender: ->
     typeView = new UploadPage.Views.TypeItem({model: @model})
