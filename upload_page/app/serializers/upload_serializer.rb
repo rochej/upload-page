@@ -3,6 +3,6 @@ class UploadSerializer < ActiveModel::Serializer
   has_one :type
 
   def created_at
-    object.datetime.strftime("%a, %b %d %l:%m %p")
+    object.created_at.strftime("%a, %b %d %l:%m %p")
   end
 end
