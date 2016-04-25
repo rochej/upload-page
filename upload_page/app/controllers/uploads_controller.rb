@@ -2,6 +2,7 @@ class UploadsController < ApplicationController
 
   def index
     @uploads = Upload.where(type_id: params[:type_id])
+
     render json: @uploads
   end
 
