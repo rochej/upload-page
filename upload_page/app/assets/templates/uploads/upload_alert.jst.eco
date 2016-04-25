@@ -1,7 +1,9 @@
-<div class = "one column">
-  <i class="fa fa-check-circle fa-2x"></i>
-</div>
-<div class = "ten columns">
-  <strong><%= @filename %> uploaded successfully!</strong>
-  Note: Once you recieve your offers, you'll be able to choose a lender to submit your documents.  Your lender will contact you if additional information is required.
+<div class = "alert-style row">
+  <div class = "one column">
+    <i class="fa fa-check-circle fa-2x"></i>
+  </div>
+  <div class = "ten columns">
+    <strong><%= @filename %> uploaded successfully!</strong><br>
+    Note: Once you recieve your offers, you'll be able to choose a lender to submit your documents.  Your lender will contact you if additional information is required.
+  </div>
 </div>
