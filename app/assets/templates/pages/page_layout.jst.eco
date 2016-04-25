@@ -1,0 +1,24 @@
+<div class = "alert"></div>
+<div class = "main">
+  <div class = "row page-head">
+    <div class = "six columns">
+      <h4> Supporting Documents</h3>
+    </div>
+    <div class = "six columns tab-nav">
+      <table class = "tab-nav-table">
+        <tr>
+          <td class = "tab-nav-cell active uploads">Your Uploads </td>
+          <td class = "tab-nav-cell submit-docs">Submit Documents</td>
+        <tr>
+      </table>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "twelve columns">
+    <br>
+      <p class = "sub-head"> While you're waiting for your offers, get a head start by uploading supporting documents.  Scanned images or photos off your phone are acceptable.  Right now, you are only uploading files to your account.</p>
+    </div>
+  </div>
+  <div class = "list">
+  </div>
+</div>

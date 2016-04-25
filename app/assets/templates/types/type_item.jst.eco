@@ -1,0 +1,7 @@
+<div class = "nine columns">
+  <strong><%= @name %></strong> (choose <%= @quantity %>)
+  <p class = "sub-head"><%= @description %></p>
+</div>
+<div class = "three columns">
+  <button class='btn-add button-primary'>Upload file</button>
+</div>
