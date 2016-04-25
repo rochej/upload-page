@@ -11,7 +11,6 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
 
   onRender: ->
     @showTypesList()
-    # @showMysteryView()
 
   showTypesList: ->
     listView = new UploadPage.Views.TypesList({collection: @collection})
@@ -24,17 +23,23 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     return
 
   events:
-    'click .tab-nav': -> @toggleActive(event)
+    'click .tab-nav': ->
+      @toggleActive(event)
+      @transitionViews(event)
 
   toggleActive: (e)->
     $('.tab-nav-cell').removeClass("active")
     $(e.target).addClass("active")
-    if $(e.target).hasClass("uploads")
-      @showTypesList()
-    else
-      @showMysteryView()
 
-
+  transitionViews: (e)->
+    self = this
+    $('.list').fadeOut("fast", ->
+      if $(e.target).hasClass("uploads")
+        self.showTypesList()
+      else
+        self.showMysteryView()
+    )
+    $('.list').fadeIn("fast")
 
   uploadSavedAlert: (upload)->
     alertView = new UploadPage.Views.AlertItem(model: upload)
