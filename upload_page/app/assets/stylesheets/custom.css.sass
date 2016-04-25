@@ -10,6 +10,7 @@ $big-margin: 2vw 0 0 0
 
 *
   font-family: "Open Sans", Arial, sans-serif
+  box-sizing: border-box
 
 body
   background-color: $bg-light
@@ -30,6 +31,26 @@ header
 
 .fa-check-circle
   color: $highlight-light
+
+.tab-nav
+  position: relative
+  min-height: 50px
+
+.tab-nav-table
+  position: absolute
+  // vertical-align: bottom
+  bottom: 0
+  margin-bottom: 0
+
+.tab-nav-cell
+  text-align: center
+  border-bottom: 0
+  padding: 10px
+  width: 1em
+  &.active
+    color: $highlight-dark
+    width: 1em
+    border-bottom: 5px solid $highlight-dark
 
 .main
   width: 100%

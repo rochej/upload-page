@@ -4,8 +4,13 @@
     <div class = "six columns">
       <h4> Supporting Documents</h3>
     </div>
-    <div class = "six columns">
-      Your Uploads Submit Documents
+    <div class = "six columns tab-nav">
+      <table class = "tab-nav-table">
+        <tr>
+          <td class = "tab-nav-cell active">Your Uploads </td>
+          <td class = "tab-nav-cell">Submit Documents</td>
+        <tr>
+      </table>
     </div>
   </div>
   <hr>

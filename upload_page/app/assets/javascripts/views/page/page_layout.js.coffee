@@ -4,6 +4,16 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     alert: '.alert'
     list: '.list'
 
+  events:
+    # 'click .tab-nav': -> debugger
+    'click .tab-nav': -> @toggleClass(event)
+
+  toggleClass: (e)->
+    $('.tab-nav-cell').removeClass("active")
+    $(e.target).addClass("active")
+    # console.log("toggleClass")
+
+
   initialize: ->
     self = this
     UploadPage.vent.on 'upload:saved', (upload) ->
