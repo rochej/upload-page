@@ -7,8 +7,8 @@
     <div class = "six columns tab-nav">
       <table class = "tab-nav-table">
         <tr>
-          <td class = "tab-nav-cell active">Your Uploads </td>
-          <td class = "tab-nav-cell">Submit Documents</td>
+          <td class = "tab-nav-cell active uploads">Your Uploads </td>
+          <td class = "tab-nav-cell submit-docs">Submit Documents</td>
         <tr>
       </table>
     </div>

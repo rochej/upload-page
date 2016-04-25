@@ -4,26 +4,38 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     alert: '.alert'
     list: '.list'
 
-  events:
-    # 'click .tab-nav': -> debugger
-    'click .tab-nav': -> @toggleClass(event)
-
-  toggleClass: (e)->
-    $('.tab-nav-cell').removeClass("active")
-    $(e.target).addClass("active")
-    # console.log("toggleClass")
-
-
   initialize: ->
     self = this
     UploadPage.vent.on 'upload:saved', (upload) ->
       self.uploadSavedAlert(upload)
 
-  uploadSavedAlert: (upload)->
-    alertView = new UploadPage.Views.AlertItem(model: upload)
-    @showChildView('alert', alertView)
-
   onRender: ->
+    @showTypesList()
+    # @showMysteryView()
+
+  showTypesList: ->
     listView = new UploadPage.Views.TypesList({collection: @collection})
     @showChildView('list', listView)
     return
+
+  showMysteryView: ->
+    mysteryView = new UploadPage.Views.MysteryItem()
+    @showChildView('list', mysteryView)
+    return
+
+  events:
+    'click .tab-nav': -> @toggleActive(event)
+
+  toggleActive: (e)->
+    $('.tab-nav-cell').removeClass("active")
+    $(e.target).addClass("active")
+    if $(e.target).hasClass("uploads")
+      @showTypesList()
+    else
+      @showMysteryView()
+
+
+
+  uploadSavedAlert: (upload)->
+    alertView = new UploadPage.Views.AlertItem(model: upload)
+    @showChildView('alert', alertView)
