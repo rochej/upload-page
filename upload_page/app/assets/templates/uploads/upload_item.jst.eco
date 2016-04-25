@@ -1,4 +1,4 @@
-<td><%= @filename %></td>
+<td class="highlight"><i class="<%= @icon %>" aria-hidden='true'></i> <%= @filename %></td>
 <td><%= @created_at %></td>
 <td><%= @statusMessage %></td>
 <td><i class='fa fa-times btn-del'></i></td>
