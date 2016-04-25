@@ -4,5 +4,5 @@
   <%= @description %>
 </div>
 <div class = "three columns">
-  <button class='btn-add button-primary'>Upload</button>
+  <button class='btn-add button-primary'>Upload file</button>
 </div>

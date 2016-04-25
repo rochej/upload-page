@@ -1,4 +1,4 @@
 <td><%= @filename %></td>
 <td><%= @created_at %></td>
-<td><%= @status %></td>
+<td><%= @statusMessage %></td>
 <td><i class='fa fa-times btn-del'></i></td>
