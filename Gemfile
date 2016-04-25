@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'momentjs-rails'
+
 gem 'rails_12factor', group: :production
 
 gem 'backbone-on-rails'

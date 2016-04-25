@@ -3,6 +3,7 @@ class UploadPage.Views.UploadItem extends Marionette.ItemView
   template: JST['uploads/upload_item']
   templateHelpers: ->
     {
+      formatedDate: moment(this.created_at).format("MM/DD/YY")
       icon:
         if (this.model.get('filename')).indexOf(".pdf") > -1
           "fa fa-file-pdf-o"
@@ -16,6 +17,9 @@ class UploadPage.Views.UploadItem extends Marionette.ItemView
           "fa fa-file-o"
       statusMessage: if this.status == true then "Uploaded successfully" else "Pending"
     }
+
+  initialize: ->
+      debugger
 
 
   events:
