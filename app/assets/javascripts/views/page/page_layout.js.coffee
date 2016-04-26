@@ -5,12 +5,22 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     modal: '.modal'
     list: '.list'
 
+  events:
+    'keydown': @testKey
+    'click .tab-nav': ->
+      @toggleActive(event)
+      @transitionViews(event)
+      @clearAlert()
+
+  testKey: ->
+    console.log("key")
+
   initialize: ->
     self = this
     UploadPage.vent.on 'upload:initiated', (type) -> self.showModalView(type)
     UploadPage.vent.on 'upload:saved', (upload) ->
-      self.uploadSavedAlert(upload)
       self.clearModal()
+      self.uploadSavedAlert(upload)
 
   onRender: ->
     @showTypesList()
@@ -18,6 +28,7 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
   showModalView: (type)->
     modalView = new UploadPage.Views.UploadModal(model: type)
     @showChildView('modal', modalView)
+    $('.overlay, .modal-style').fadeIn("fast")
     return
 
   showTypesList: ->
@@ -29,13 +40,6 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     mysteryView = new UploadPage.Views.MysteryItem()
     @showChildView('list', mysteryView)
     return
-
-  events:
-    'click .tab-nav': ->
-      @toggleActive(event)
-      @transitionViews(event)
-      @clearAlert()
-
 
   toggleActive: (e)->
     $('.tab-nav-cell').removeClass("active")
@@ -55,7 +59,11 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     @regionManager._regions.alert.empty()
 
   clearModal: ->
-    @regionManager._regions.modal.empty()
+    self = this
+    $('.overlay, .modal-style').fadeOut("fast", ->
+      self.regionManager._regions.modal.empty()
+    )
+
 
   uploadSavedAlert: (upload)->
     alertView = new UploadPage.Views.AlertItem(model: upload)
