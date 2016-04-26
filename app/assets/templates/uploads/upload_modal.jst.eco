@@ -1,8 +1,14 @@
 <div class = "overlay"></div>
 <div class = "modal-style">
-  <button class="btn-close">x</button>
-  <form enctype="multipart/form-data">
-    <input type="file" id="upload-file">
-    <input class="btn-save button-primary" type="submit" value="Save">
-  </form>
+  <div class = "section-head">
+    Upload your <%= @name %>
+    <button class="btn-close"><i class='fa fa-times btn-del'></i></button>
+  </div>
+  <div class= "section-body">
+    <form enctype="multipart/form-data">
+      <input type="file" id="upload-file">
+      <br>
+      <input class="btn-save button-primary" type="submit" value="Save">
+    </form>
+  </div>
 </div>
