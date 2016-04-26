@@ -18,9 +18,6 @@ class UploadPage.Views.UploadItem extends Marionette.ItemView
       statusMessage: if this.status == true then "Uploaded successfully" else "Pending"
     }
 
-  initialize: ->
-      debugger
-
 
   events:
     'click .btn-del': 'deleteUpload'

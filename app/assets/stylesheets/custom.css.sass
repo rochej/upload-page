@@ -7,6 +7,7 @@ $text: #717171 //dark grey
 $outline: #cccccc //light grey
 $big-padding: 2vw 5vw 2vw 5vw
 $big-margin: 2vw 0 0 0
+$border-radius: 1px
 
 *
   font-family: "Open Sans", Arial, sans-serif
@@ -22,12 +23,13 @@ header
   background-color: $bg-dark
 
 .alert-style
-  @extend .wrapper
   width: 100%
   padding: $big-padding
   color: $highlight-light
   background-color: $bg-alert
   margin: $big-margin
+  border-radius: $border-radius
+  border: 1px solid #CCDBEC
 
 .fa-check-circle
   color: $highlight-light

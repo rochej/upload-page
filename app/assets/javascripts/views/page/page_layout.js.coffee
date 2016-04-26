@@ -26,6 +26,8 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     'click .tab-nav': ->
       @toggleActive(event)
       @transitionViews(event)
+      @clearAlert()
+
 
   toggleActive: (e)->
     $('.tab-nav-cell').removeClass("active")
@@ -40,6 +42,9 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
         self.showMysteryView()
     )
     $('.list').fadeIn("fast")
+
+  clearAlert: ->
+    this.regionManager._regions.alert.empty()
 
   uploadSavedAlert: (upload)->
     alertView = new UploadPage.Views.AlertItem(model: upload)
