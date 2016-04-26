@@ -4,6 +4,4 @@
     <input type="file" id="upload-file">
     <input class="btn-save button-primary" type="submit" value="Save">
   </form>
-  Upload
-  <button class='btn-save button-primary'>Save file</button>
 </div>
