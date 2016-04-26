@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  mount Konacha::Engine, at: "/konacha" if defined?(Konacha)
+
+
 
   scope "api" do
     resources :types do
