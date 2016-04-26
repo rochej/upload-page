@@ -17,6 +17,7 @@
 //= require backbone
 //= require backbone.marionette
 //= require moment
+//= require jquery.iframe-transport
 //= require upload_page
 //= require_tree ../templates
 //= require_tree ./models

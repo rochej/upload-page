@@ -22,6 +22,9 @@ class UploadPage.Views.UploadItem extends Marionette.ItemView
   events:
     'click .btn-del': 'deleteUpload'
 
+  initialize: ->
+    debugger
+
   modelEvents:
     'change': 'render'
 

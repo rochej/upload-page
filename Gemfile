@@ -1,3 +1,9 @@
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery.iframe-transport'
+end
+
+
+
 source 'https://rubygems.org'
 
 gem 'momentjs-rails'

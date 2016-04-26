@@ -11,6 +11,7 @@ class UploadsController < ApplicationController
   end
 
   def create
+    binding.pry
     @type = Type.find(params[:type_id])
     @upload = Upload.create(filename: "fake.txt", type: @type)
     render json: @upload

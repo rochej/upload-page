@@ -1,6 +1,6 @@
 <div class = "overlay"></div>
 <div class = "modal-style">
-  <form>
+  <form enctype="multipart/form-data">
     <input type="file" id="upload-file">
     <input class="btn-save button-primary" type="submit" value="Save">
   </form>
