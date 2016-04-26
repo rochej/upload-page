@@ -46,6 +46,8 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'konacha'
+  gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do
