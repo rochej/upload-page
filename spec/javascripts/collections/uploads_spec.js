@@ -1,7 +1,7 @@
 //= require spec_helper
 //= require application.js
 
-describe('Types', function(){
+describe('Uploads', function(){
   var subject;
   beforeEach(function(){
     UploadPage.initialize()
