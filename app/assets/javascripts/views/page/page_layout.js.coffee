@@ -6,14 +6,10 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     list: '.list'
 
   events:
-    'keydown': @testKey
     'click .tab-nav': ->
       @toggleActive(event)
       @transitionViews(event)
       @clearAlert()
-
-  testKey: ->
-    console.log("key")
 
   initialize: ->
     self = this
@@ -21,6 +17,8 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     UploadPage.vent.on 'upload:saved', (upload) ->
       self.clearModal()
       self.uploadSavedAlert(upload)
+    UploadPage.vent.on 'upload:canceled', (upload) ->
+      self.clearModal()
 
   onRender: ->
     @showTypesList()
