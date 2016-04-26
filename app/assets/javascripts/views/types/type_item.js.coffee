@@ -4,4 +4,3 @@ class UploadPage.Views.TypeItem extends Marionette.ItemView
 
   events:
     'click .btn-add': -> UploadPage.vent.trigger 'upload:initiated', @model
-

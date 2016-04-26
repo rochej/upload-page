@@ -10,6 +10,7 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     UploadPage.vent.on 'upload:initiated', (type) -> self.showModalView(type)
     UploadPage.vent.on 'upload:saved', (upload) ->
       self.uploadSavedAlert(upload)
+      self.clearModal()
 
   onRender: ->
     @showTypesList()
@@ -51,7 +52,10 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     $('.list').fadeIn("fast")
 
   clearAlert: ->
-    this.regionManager._regions.alert.empty()
+    @regionManager._regions.alert.empty()
+
+  clearModal: ->
+    @regionManager._regions.modal.empty()
 
   uploadSavedAlert: (upload)->
     alertView = new UploadPage.Views.AlertItem(model: upload)

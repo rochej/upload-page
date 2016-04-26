@@ -15,15 +15,11 @@ class UploadPage.Views.UploadItem extends Marionette.ItemView
           "fa fa-file-image-o"
         else
           "fa fa-file-o"
-      statusMessage: if this.status == true then "Uploaded successfully" else "Pending"
+      statusMessage: if this.model.get('status') then "Uploaded successfully" else "Pending"
     }
-
 
   events:
     'click .btn-del': 'deleteUpload'
-
-  initialize: ->
-    debugger
 
   modelEvents:
     'change': 'render'

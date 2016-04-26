@@ -4,11 +4,19 @@ class UploadPage.Routers.Uploads extends Marionette.AppRouter
 
   initialize: ->
     self = this
-    UploadPage.vent.on 'upload:added', (type) ->
-      self.createUpload(type)
+    UploadPage.vent.on 'upload:added', (type, event) ->
+      self.createUpload(type, event)
 
-  createUpload: (type)->
-    type.uploads.create({filename: "joe"}, {wait: true, success: (model, response, options)-> UploadPage.vent.trigger 'upload:saved', model})
+  createUpload: (type, event)->
+    filename = $('#upload-file')[0].files[0].name
+    type.uploads.create({filename: filename},
+      {
+        wait: true,
+        success: (model, response, options)->
+          UploadPage.vent.trigger 'upload:saved', model
+      }
+    )
+
 
   index: ->
     @types = new UploadPage.Collections.Types()

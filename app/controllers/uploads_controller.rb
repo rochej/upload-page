@@ -11,9 +11,8 @@ class UploadsController < ApplicationController
   end
 
   def create
-    binding.pry
     @type = Type.find(params[:type_id])
-    @upload = Upload.create(filename: "fake.txt", type: @type)
+    @upload = Upload.create(filename: params[:filename], status: true, type: @type)
     render json: @upload
   end
 
@@ -26,6 +25,6 @@ class UploadsController < ApplicationController
   end
 
   def upload_params
-    params.require(:upload).permit(:filename)
+    params.require(:upload).permit(:filename, :data)
   end
 end
