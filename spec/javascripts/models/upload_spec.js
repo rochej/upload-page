@@ -9,6 +9,6 @@ describe('Upload', function(){
   });
 
   it('has the correct defaults', function(){
-    expect(subject.get('filename').to.eq(''))
+    expect(subject.get('filename').should.eq(''))
   });
 });
