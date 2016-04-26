@@ -2,15 +2,22 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
   template: JST['pages/page_layout']
   regions:
     alert: '.alert'
+    modal: '.modal'
     list: '.list'
 
   initialize: ->
     self = this
+    UploadPage.vent.on 'upload:initiated', (type) -> self.showModalView(type)
     UploadPage.vent.on 'upload:saved', (upload) ->
       self.uploadSavedAlert(upload)
 
   onRender: ->
     @showTypesList()
+
+  showModalView: (type)->
+    modalView = new UploadPage.Views.UploadModal(model: type)
+    @showChildView('modal', modalView)
+    return
 
   showTypesList: ->
     listView = new UploadPage.Views.TypesList({collection: @collection})

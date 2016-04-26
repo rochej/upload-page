@@ -1,0 +1,4 @@
+<div class = "modal">
+  Upload
+  <button class='btn-save button-primary'>Save file</button>
+</div>

@@ -3,5 +3,5 @@ class UploadPage.Views.TypeItem extends Marionette.ItemView
   template: JST['types/type_item']
 
   events:
-    'click .btn-add': -> UploadPage.vent.trigger 'upload:added', @model
+    'click .btn-add': -> UploadPage.vent.trigger 'upload:initiated', @model
 
