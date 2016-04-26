@@ -1,10 +1,11 @@
 //= require spec_helper
-//= require models/upload
+//= require application.js
 
 describe('Upload', function(){
   var subject;
   beforeEach(function(){
-    subject = new Upload();
+    UploadPage.initialize()
+    subject = new UploadPage.Models.Upload();
   });
 
   it('has the correct defaults', function(){

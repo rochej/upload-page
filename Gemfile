@@ -47,6 +47,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'konacha'
+  gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.0'
 end
 
