@@ -20,7 +20,7 @@
   bundle install
   rake db:create
   rake db:migrate
-  rake db:seed
+  rake db:seed // populates specified types
   rails server
 ```
 

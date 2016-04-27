@@ -1,3 +1,5 @@
+# in a larger app, consider adding a seperate controller http://pragmatic-backbone.com/routing-and-controllers
+
 class UploadPage.Routers.Uploads extends Marionette.AppRouter
   routes:
     '': 'index',

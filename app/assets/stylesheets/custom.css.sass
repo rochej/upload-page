@@ -22,6 +22,8 @@ header
   width: 100%
   height: 75px
 
+// UPLOAD MODAL
+
 .overlay
   background-color: rgba(0,0,0,0.5)
   height: 100%
@@ -56,6 +58,30 @@ header
   right: 1.5rem
   bottom: 5px
 
+.progress
+  display: none
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+
+  to
+    transform: rotate(360deg)
+
+.spinner
+  background: linear-gradient(to bottom right, $bg-dark, $highlight-light)
+  color: white
+  padding: 0.5em
+  height: 3em
+  width: 3em
+  margin: 0 auto
+  animation: spin 10s linear infinite
+  border-radius: 50%
+.progress-text
+  text-align: center
+
+// UPLOAD ALERT
+
 .alert-style
   background-color: $bg-alert
   color: $highlight-light
@@ -67,6 +93,8 @@ header
 
 .fa-check-circle
   color: $highlight-light
+
+// PAGE LAYOUT
 
 .main
   background-color: white
@@ -96,6 +124,15 @@ header
     width: 1em
     border-bottom: 5px solid $highlight-dark
 
+// TYPE ITEM & TYPE LIST
+.wrapper
+  border: 1px solid $outline
+  border-radius: 1px
+
+.type-wrapper
+  @extend .wrapper
+  margin: 2vw 0 0 0
+
 .section-head
   background-color: $bg-light
   position: relative
@@ -103,6 +140,14 @@ header
 
 .sub-head
   color: $text
+
+.btn-add
+  position: absolute
+  bottom: 1.5vw
+  right: 1vw
+  margin: 0px
+
+// UPLOAD LIST
 
 .section-body
   padding: 1vw
@@ -116,45 +161,11 @@ thead
 .fa-sort-desc
   vertical-align: top
 
+// UPLOAD ITEM
+
 .highlight
   color: $highlight-light
 
 .fa-times
   color: $text
   cursor: pointer
-
-.btn-add
-  position: absolute
-  bottom: 1.5vw
-  right: 1vw
-  margin: 0px
-
-.wrapper
-  border: 1px solid $outline
-  border-radius: 1px
-
-.type-wrapper
-  @extend .wrapper
-  margin: 2vw 0 0 0
-
-.progress
-  display: none
-
-@keyframes spin
-  from
-    transform: rotate(0deg)
-
-  to
-    transform: rotate(360deg)
-
-.spinner
-  background: linear-gradient(to bottom right, $bg-dark, $highlight-light)
-  color: white
-  padding: 0.5em
-  height: 3em
-  width: 3em
-  margin: 0 auto
-  animation: spin 10s linear infinite
-  border-radius: 50%
-.progress-text
-  text-align: center
