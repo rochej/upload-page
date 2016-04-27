@@ -13,7 +13,6 @@ class UploadPage.Views.UploadModal extends Marionette.ItemView
     _.bindAll(this, 'keyListener')
     $(document).bind('keydown', @keyListener)
 
-
   # this is all contrived--just a chance to show a little animation
   loadProgress: ->
     $('.progress').fadeIn("fast")
@@ -25,8 +24,6 @@ class UploadPage.Views.UploadModal extends Marionette.ItemView
         $('.btn-save').focus()
       )
     setTimeout(fadeText, 5000)
-
-
 
   keyListener: ->
     if event.keyCode == 27
