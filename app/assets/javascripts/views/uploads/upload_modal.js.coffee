@@ -14,12 +14,15 @@ class UploadPage.Views.UploadModal extends Marionette.ItemView
 
   # this is all contrived--just a chance to show a little animation
   loadProgress: ->
-    $('.progress').css("display", "inline")
-    changeText = ->
-      $('.progress-text').text("Loaded!")
-      $('.spinner').css("transform", "none")
-
-    setTimeout(changeText, 5000)
+    $('.progress').fadeIn("fast")
+    fadeText = ->
+      $('.spinner').fadeOut("fast")
+      $('.progress').fadeOut("fast", ->
+        $('.progress-text').text("Loaded!")
+        $('.progress').fadeIn("fast")
+        $('.btn-save').focus()
+      )
+    setTimeout(fadeText, 5000)
 
 
 
