@@ -16,7 +16,7 @@ class UploadPage.Views.UploadModal extends Marionette.ItemView
   loadProgress: ->
     $('.progress').fadeIn("fast")
     fadeText = ->
-      $('.spinner').fadeOut("fast")
+      $('.spinner').animate({opacity: 0}, "fast")
       $('.progress').fadeOut("fast", ->
         $('.progress-text').text("Loaded!")
         $('.progress').fadeIn("fast")
