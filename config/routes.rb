@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
 
   scope "api" do
-    resources :types do
+    resources :types, only: [:index, :show] do
       resources :uploads
     end
   end

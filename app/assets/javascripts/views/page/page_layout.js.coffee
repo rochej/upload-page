@@ -43,6 +43,7 @@ class UploadPage.Views.PageLayout extends Marionette.LayoutView
     $('.tab-nav-cell').removeClass("active")
     $(e.target).addClass("active")
 
+  # in a larger app, add class-wide method to fade views https://github.com/marionettejs/backbone.marionette/issues/320
   transitionViews: (e)->
     self = this
     $('.list').fadeOut("fast", ->

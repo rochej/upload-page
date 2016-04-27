@@ -16,15 +16,15 @@ class UploadsController < ApplicationController
     render json: @upload
   end
 
-  def update
-    render json: Upload.update(params[:id], upload_params)
-  end
+  # def update
+  #   render json: Upload.update(params[:id], upload_params)
+  # end
 
   def destroy
     render json: Upload.destroy(params[:id])
   end
 
   def upload_params
-    params.require(:upload).permit(:filename, :data)
+    params.require(:upload).permit(:filename)
   end
 end
