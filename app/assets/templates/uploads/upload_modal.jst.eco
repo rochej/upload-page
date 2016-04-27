@@ -8,6 +8,10 @@
     <form enctype="multipart/form-data">
       <input type="file" id="upload-file">
       <br>
+      <div class = "progress">
+        <div class ="spinner">.</div>
+        <div class="progress-text">Loading...</div>
+      </div>
       <input class="btn-save button-primary" type="submit" value="Save">
     </form>
   </div>
