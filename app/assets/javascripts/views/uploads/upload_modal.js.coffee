@@ -3,7 +3,9 @@ class UploadPage.Views.UploadModal extends Marionette.ItemView
   template: JST['uploads/upload_modal']
 
   events:
-    'submit form': -> UploadPage.vent.trigger 'upload:added', @model, event
+    'submit form': (event)->
+      event.preventDefault()
+      UploadPage.vent.trigger 'upload:added', @model, event
     'click .btn-close' : -> UploadPage.vent.trigger 'upload:canceled', @model, event
     'change #upload-file': -> @loadProgress()
 
