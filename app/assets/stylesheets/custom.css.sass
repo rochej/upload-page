@@ -18,31 +18,31 @@ body
   color: $text
 
 header
-  background-color: $bg-dark
   width: 100%
   height: 75px
+  background-color: $bg-dark
 
 .overlay
-  background-color: rgba(0,0,0,0.5)
-  height: 100%
-  width: 100%
   display: none
   position: fixed
   top: 0
   left: 0
+  height: 100%
+  width: 100%
   z-index: 100
+  background-color: rgba(0,0,0,0.5)
 
 .modal-style
-  background-color: white
-  height: 15vw
-  min-height: 150px
-  width: 30vw
-  min-width: 300px
   display: none
   position: fixed
   top: 30%
   left: 33%
+  height: 15vw
+  width: 30vw
+  min-height: 150px
+  min-width: 300px
   z-index: 101
+  background-color: white
 
 .btn-close
   width: 34px
@@ -57,11 +57,11 @@ header
   bottom: 5px
 
 .alert-style
-  background-color: $bg-alert
-  color: $highlight-light
   width: 100%
-  margin: $big-margin
   padding: $big-padding
+  color: $highlight-light
+  background-color: $bg-alert
+  margin: $big-margin
   border-radius: $border-radius
   border: 1px solid #CCDBEC
 
@@ -69,10 +69,10 @@ header
   color: $highlight-light
 
 .main
-  background-color: white
   width: 100%
-  margin: $big-margin
+  background-color: white
   padding: $big-padding
+  margin: $big-margin
 
 .page-head
   border-bottom: 1px solid $outline
@@ -87,10 +87,10 @@ header
   margin-bottom: 0
 
 .tab-nav-cell
-  width: 1em
-  padding: 10px
-  border-bottom: 0
   text-align: center
+  border-bottom: 0
+  padding: 10px
+  width: 1em
   &.active
     color: $highlight-dark
     width: 1em
@@ -98,8 +98,8 @@ header
 
 .section-head
   background-color: $bg-light
-  position: relative
   padding: 1vw
+  position: relative
 
 .sub-head
   color: $text
@@ -109,13 +109,10 @@ header
 
 table
   width: 100%
-
 thead
   color: $text
-
 .fa-sort-desc
   vertical-align: top
-
 .highlight
   color: $highlight-light
 
@@ -136,25 +133,3 @@ thead
 .type-wrapper
   @extend .wrapper
   margin: 2vw 0 0 0
-
-.progress
-  display: none
-
-@keyframes spin
-  from
-    transform: rotate(0deg)
-
-  to
-    transform: rotate(360deg)
-
-.spinner
-  background: linear-gradient(to bottom right, $bg-dark, $highlight-light)
-  color: white
-  padding: 0.5em
-  height: 3em
-  width: 3em
-  margin: 0 auto
-  animation: spin 10s linear infinite
-  border-radius: 50%
-.progress-text
-  text-align: center

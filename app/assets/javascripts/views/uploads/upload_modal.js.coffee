@@ -2,15 +2,9 @@ class UploadPage.Views.UploadModal extends Marionette.ItemView
   tagname: 'div'
   template: JST['uploads/upload_modal']
 
-  events:
-    'submit form': -> UploadPage.vent.trigger 'upload:added', @model, event
-    'click .btn-close' : -> UploadPage.vent.trigger 'upload:canceled', @model, event
-    'change #upload-file': -> @loadProgress()
-
   initialize: ->
     _.bindAll(this, 'keyListener')
     $(document).bind('keydown', @keyListener)
-
 
   # this is all contrived--just a chance to show a little animation
   loadProgress: ->
@@ -25,6 +19,10 @@ class UploadPage.Views.UploadModal extends Marionette.ItemView
     setTimeout(fadeText, 5000)
 
 
+
+  events:
+    'submit form': -> UploadPage.vent.trigger 'upload:added', @model, event
+    'click .btn-close' : -> UploadPage.vent.trigger 'upload:canceled', @model, event
 
   keyListener: ->
     if event.keyCode == 27
