@@ -25,12 +25,6 @@ class UploadPage.Views.UploadModal extends Marionette.ItemView
       )
     setTimeout(fadeText, 5000)
 
-
-
-  events:
-    'submit form': -> UploadPage.vent.trigger 'upload:added', @model, event
-    'click .btn-close' : -> UploadPage.vent.trigger 'upload:canceled', @model, event
-
   keyListener: ->
     if event.keyCode == 27
       UploadPage.vent.trigger 'upload:canceled', @model, event
