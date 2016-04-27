@@ -2,6 +2,13 @@ class UploadPage.Views.UploadModal extends Marionette.ItemView
   tagname: 'div'
   template: JST['uploads/upload_modal']
 
+  events:
+    'submit form': (event)->
+      event.preventDefault()
+      UploadPage.vent.trigger 'upload:added', @model, event
+    'click .btn-close' : -> UploadPage.vent.trigger 'upload:canceled', @model, event
+    'change #upload-file': -> @loadProgress()
+
   initialize: ->
     _.bindAll(this, 'keyListener')
     $(document).bind('keydown', @keyListener)
